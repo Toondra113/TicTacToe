@@ -17,16 +17,17 @@ while online:
   
   if whosturn(turn) == 'X':
     move = input("Player 1: Where do you want to move? ")
-    while checkval == False:
-      if checkval(move) == true:
-        places[int(move)] = 'X'
+    while checkval(move) == False:
+      move = input("Player 1: Where do you want to move? ")
+    places[int(move)] = 'X'
         
     
   else:
   
     move = input("Player 2: Where do you want to move? ")
-    while checkval == False:
-      if checkval(move) == true:
-        places[int(move)] = 'O'
+    while checkval(move) == False:
+      move = input("Player 1: Where do you want to move? ")
+    
+    places[int(move)] = 'O'
 
   turn = turn + 1
