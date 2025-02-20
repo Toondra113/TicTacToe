@@ -1,7 +1,7 @@
 import os
-from busybee import loadboard, whosturn
+from busybee import loadboard, whosturn, checkval
 
-places = {1 : '1', 2 : 'B', 3 : 'C', 4 : 'D', 5 : 'E', 6 : "F", 7 : 'G', 8 : 'H', 9 : 'I'}
+places = {1 : '1', 2 : '2', 3 : '3', 4 : '4', 5 : '5', 6 : "6", 7 : '7', 8 : '8', 9 : '9'}
 
 turn = 0
 
@@ -14,11 +14,19 @@ while online:
   os.system('cls' if os.name == 'nt' else 'clear')
   loadboard(places)
  
-
+  
   if whosturn(turn) == 'X':
     move = input("Player 1: Where do you want to move? ")
+    while checkval == False:
+      if checkval(move) == true:
+        places[int(move)] = 'X'
+        
     
   else:
+  
     move = input("Player 2: Where do you want to move? ")
+    while checkval == False:
+      if checkval(move) == true:
+        places[int(move)] = 'O'
 
   turn = turn + 1

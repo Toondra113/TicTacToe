@@ -11,6 +11,16 @@ def whosturn(round):
   else:
     return "O"
 
+def checkval(move):
+  if len(move) != 1:
+    print("Please enter a single number")
+    
+    return False
+
+  if move not in places:
+    print("Please enter a number from 1 to 9")
+    return False
+  
 
 
 
