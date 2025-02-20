@@ -12,16 +12,23 @@ def whosturn(round):
     return "O"
 
 def checkval(move, places):
-  if len(move) != 1:
-    print("Please enter a single number")
-    
+  if not move.isdigit():
+    print("Please enter a number")
     return False
 
-  if str(move) not in places:
+  move_num = int(move)
+
+  if move_num < 1 or move_num > 9:
     print("Please enter a number from 1 to 9")
-    
     return False
-  
+
+  if places[move_num] in ['X', 'O']:
+    print("That spot is already taken")
+    return False
+
+  return True
+
+
 
 
 
